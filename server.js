@@ -1,3 +1,7 @@
+
+//fichier server.js
+// fichier principal de l'api
+
 const express = require('express');
 const mysql = require('mysql');
 const cors = require ('cors');
