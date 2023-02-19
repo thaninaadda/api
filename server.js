@@ -1,6 +1,13 @@
+/*
 
-//fichier server.js
-// fichier principal de l'api
+Nom fichier  server.js
+Date creation :2023-02-9
+detail: ce fichier sera le noyeau de l'api.
+
+createur : thanina
+modification:
+*/
+
 
 const express = require('express');
 const mysql = require('mysql');

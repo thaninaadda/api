@@ -1,3 +1,14 @@
+/*
+
+Nom fichier  parent.js
+Date creation :2023-02-9
+detail: ce fichier contient le post et le get pour la table parent
+createur : thanina
+modification:
+*/
+
+
+
 const express = require('express');
 const mysql = require('mysql');
 const cors = require ('cors');

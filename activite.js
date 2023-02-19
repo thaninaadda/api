@@ -1,3 +1,13 @@
+/*
+
+Nom fichier  benevole.js
+Date creation :2023-02-9
+detail: ce fichier contient le post et le get pour la table benevole
+createur : Maxcence
+modification:
+*/
+
+
 const express = require('express');
 const mysql = require('mysql');
 const cors = require ('cors');
