@@ -43,6 +43,11 @@ app.use(express.json());
 // URL-encoded body parser
 app.use(express.urlencoded({ limit: "20mb", extended: true }));
 
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// permet d'obtenir la liste des parents dans la bd
 app.get('/parent', function(req, res, next){ 
     res.locals.connection.query('Select * from parent', function(error, results, fields){
         if (error) throw error;
@@ -50,6 +55,8 @@ app.get('/parent', function(req, res, next){
     })
 });
 
+
+// permet de creer un parent et inserer les donnees dans la table parent.
 app.post('/creerParent', (req, res) => {
     console.log('titi');
     const { nom, prenom, courriel, password } = req.body;
@@ -65,7 +72,10 @@ app.post('/creerParent', (req, res) => {
     });
   });
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+
+// permet d'obtenir la liste des activites dans la bd
 
   app.get('/activite', function(req, res, next){ 
     res.locals.connection.query('Select * from activite', function(error, results, fields){
@@ -73,7 +83,7 @@ app.post('/creerParent', (req, res) => {
         res.json(results);
     })
 });
-
+// permet de creer une activite et inserer les donnees dans la table activite.
 app.post('/creerActivite', (req, res) => {
     const { nomEvent, description, tarif, platforme, lieu, LienZoom } = req.body;
     const sql = 'INSERT INTO activite (nomEvent, description, tarif, platforme, lieu, LienZoom) VALUES (?, ?, ?, ?, ?, ?)';
@@ -87,8 +97,10 @@ app.post('/creerActivite', (req, res) => {
       res.send('Data inserted');
     });
   });
+/////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
+// permet d'obtenir la liste des benevoles dans la bd
   app.get('/benevole', function(req, res, next){ 
     res.locals.connection.query('Select * from benevole', function(error, results, fields){
         if (error) throw error;
@@ -96,6 +108,8 @@ app.post('/creerActivite', (req, res) => {
     })
 });
 
+
+// permet de creer un benevole et inserer les donnees dans la table benevole.
 app.post('/creerBenevole', (req, res) => {
     console.log('titi');
     const { nom, prenom, courriel, telephone, dateNaissance, lieuResidence, langue, dureeTotalAllaitement, experience, commentaire} = req.body;
